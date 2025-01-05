@@ -33,6 +33,11 @@ class Payment(db.Model):
 with app.app_context():
     db.create_all()
 
+# Ruta principal
+@app.route('/')
+def home():
+    return "¡Bienvenido a la plataforma de pagos!"
+
 # Funciones reutilizables
 def get_user_by_name(name):
     user = User.query.filter_by(name=name).first()
